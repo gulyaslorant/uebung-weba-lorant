@@ -1,9 +1,13 @@
 main {
-  max-width: 500px;
+  max-width: 1000px;
   margin:0 auto;
+  display:flexbox;
+  background-color:burlywood;
+  justify-items: center;
+  align-items: center;
 }
 form {
-  display: flex;
+  display: flexbox;
   gap: 20px;
   font-size: 20px;
 }
@@ -13,8 +17,5 @@ input, button {
 
 li {
   padding: 10px 10px;
-  border-radius: 0.5px;
-border-color: black;
-border-style: solid;
-
+  font-weight: 800;
 }
