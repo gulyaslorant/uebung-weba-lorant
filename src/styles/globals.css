@@ -10,3 +10,11 @@ form {
 input, button {
   padding: 10px 20px;
 }
+
+li {
+  padding: 10px 10px;
+  border-radius: 0.5px;
+border-color: black;
+border-style: solid;
+
+}
