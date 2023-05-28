@@ -39,6 +39,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
+        <h1>
+          Das ist eine kleine To Do Liste, auf der man einträge posten kann
+        </h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
