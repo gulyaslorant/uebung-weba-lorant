@@ -61,7 +61,17 @@ Der Code Editor ist unabdingbar, um den Source Code der Seite zu schreiben. Das 
 
 [Vs Code Editor](<https://code.visualstudio.com/>)
 
-Einfach installieren, und danach starten. Im IDE der Sotware hat man die Möglichkeit Plugins zu installieren, sowie Accounts zu verknüpfen. Wir werden diese Funktion nutzen, um VsCode mit Github zu verbinden, um das Updaten der App zu erleichtern. Links unten im Editor Fenster kann man ein Avatar sehen, übe den man sich auf Github anmelden kann, sofern die 
+Einfach installieren, und danach starten. Im IDE der Sotware hat man die Möglichkeit Plugins zu installieren, sowie Accounts zu verknüpfen. Wir werden diese Funktion nutzen, um VsCode mit Github zu verbinden, um das Updaten der App zu erleichtern. Links unten im Editor Fenster kann man ein Avatar sehen, übe den man sich auf Github anmelden kann, sofern das entsprechende Plugin installiert wurde.
+
+Verwendete Plugins:
+
+- GitHub Pull Request
+  
+- Git History
+
+- GitLens
+
+- Git Graph
 
 ## Benötigte Accounts
 
@@ -86,6 +96,16 @@ Das gute ist, dass man hier direkt seinen Github Zugang verwenden kann. Einfach 
 
 Sobald diese beiden Accounts angelegt wurden, kann auch schon mit der Erstellung der Webseite begonnen werden.
 
+**MongoDB:**
+
+Als letztes benötigen wir noch einen Account bei MongoDB, das ist eine Dokumentenbasierte Datenbank, auf der wir uns eigene Strukturen ganz leicht anlegen können, damit wir diese später über die Webseite abrufen können. Hier haben wir auch die Möglichkeit, und einen kostenlosen Account anzulegen. Auch hier haben wir die Möglichkeit uns mit unseren Google Account anzumelden.
+
+![MongoDB Startseite](/Images/MongoDB-signin.jpg)
+
+![MongoDB Login Seite](/Images/MongoDB_google.jpg)
+
+Durch diese Massnahmen haben wir eine ganz einfache Möglichkeit direkt die Datenbank anzulegen, mit der wir später auf der Plattform arbeiten.
+
 ## Initialisierung eines neuen Projektes
 
 Um ein neues Projekt zu starten müssen die folgenden Schritte berücksichtigt werden.
@@ -102,10 +122,64 @@ Wobei xx für die Ordnerstruktur steht, wo der Ordner abgelegt ist.
 
 Im Ordner führen wir den folgenden Befehl aus.
 
-`npx create-next-app weba-uebung-lorant`
+`npx create-next-app weba-lorant-weba`
 
 Hierbei ist **npx** der Befehl, create-next-app der Parameter und *"weba-uebung-lorant"* der Projektname. Nachdem Ausführen des Befehls werden einige Fragen zur Art des Projektes gestellt. Hierbei wird z.B. abgefragt, ob das Projekt Typescript verwenden soll, Tailwind Css verwendet wird und ähnliches. Im folgenden Bild sind die passenden Einstellungen für das aktuelle Projekt abgebildet. Hier sieht man auch die Ausgabe des befehls in der Konsole.
 
 ![Einstellungen Node Projekt](/Images/npx_01.jpg)
 
 Nachdem das Projekt erstellt wurde, kann auch schon das passende Git Repository erstellt werden. *(Wir haben die erweiterte Version von Git verwendet. (Die erweiterung Git Flow ist hierbei aber Opional. Sie dient dazu verschiedene Stränge für die Entwicklung bereitzustellen.))*
+
+Zuerst mit `cd "Projektname"` in das entsprechende Verzeichnis wechseln und den folgenden Befehl ausführen.
+
+`git flow init`
+
+Anbei die Ausgabe des Befehls, mit den möglichen Parametern, die man angeben kann.
+
+![Git Init](/Images/npm_Create.jpg)
+
+Wenn alles erfolgreich geklappt hat, dann sollten folgende Dateien zu sehen sein, wenn man den neu angelegten Ordner mit Visual Studio Code öffnet.
+
+![Ordenerstruktur in Vs Code](/Images/vscode_01.jpg)
+
+Wenn wir dieses Bild sehen, können wir die Applikation zum ersten mal starten.
+
+### Start den Webserver
+
+Um den Webserver zu starten müssen wir sicherstellen, dass wir im Projektordner sind. Das können wir ganz leicht mit: `pwd` prüfen.
+
+Sollten wir wiedererwarten nicht im richtigen Ordner sein, bitte zuerst in den Projektordner wechseln.
+
+Wenn das erledigt ist, dann kann man folgenden Befehl ausführen:
+
+`npm run dev`
+
+Hiermit wir eine Entwicklungsinstanz auf unseren Rechner gestartet.
+Wenn der Befehl ausgeführt wurde, bekommen wir eine Benachrichtigung, dass der Server auf [http://localhost:3000](<http://localhost:3000>) gestartet wurde. Und ggf. Fehlermeldungen, die eine Ausführung behindern.
+
+![Gestarteter Dev Server](/Images/npm_run_dev.jpg)
+
+Wenn alles richtig gemacht wurde, bekommen wir in der letzten Zeile die Nachricht, dass "compiled client and server succesfully"
+
+## Wir haben es geschafft, wir haben unsere erste eigene Next.Js App angelegt
+
+### Wir können die Webseite öffnen, indem wir die Localhost Adresse in unseren Browser öffnen
+
+Bevor wir mit den Anpassungen der Seite beginnen, sollten wir zuerst die Verbindung mit Vercel anlegen, damit später die Aktualisierung der App direkt aus VsCode passieren kann.
+
+Da die genaue Verbindung von Github und Vs Code ein eigenes Kapitel darstellen würde, wird hier die Offizielle Anleitung verlinkt, wo genau beschrieben ist, welche Schritte man durchführen muss.
+
+[Github Verbindung mit Vs Code](<https://code.visualstudio.com/docs/sourcecontrol/github>)
+
+Wenn alles gepasst hat, sollten wir auf der linken Seite, beim Punkt Quellencode Verwaltung eine Zahl sehen -> Diese zeigt an, wie viele Dateien mit dem Server zu synchronieren sind.
+
+![Github Plugin für das Synchonisieren](/Images/Quellcode_0.jpg)
+
+Jetzt können wir damit beginnen, den Source Code zu bearbeiten. Hierzu müssen wir uns erstmal die Struktur etwas genauer anschauen.
+
+- **/src/pages/index.js** --> Das ist unsere Startseite, die im Browser geöffnet wird, wenn wir die URL aufrufen.
+- **/src/styles/global.css** --> Hier werden alle Designangaben getätigt, die sich Global auswirken sollen
+- **package.json** --> Hier werden alle Komponenten gelistet, die in der Instanz laufen und benötigt werden.
+- **/public/**  --> Hier sind alle Dateien, die frei zugänglich sein sollen.
+
+Bevor wir die Index.js editieren werden, müssen wir erst Vorkehrungen treffen, um die Datenbank anbindung zu aktivieren. Hier gibt es bestimmte Routen, die eingehalten werden müssen, damit die Verbindung zur Datenbank auf funktionieren kann.
