@@ -106,6 +106,10 @@ Als letztes benötigen wir noch einen Account bei MongoDB, das ist eine Dokument
 
 Durch diese Massnahmen haben wir eine ganz einfache Möglichkeit direkt die Datenbank anzulegen, mit der wir später auf der Plattform arbeiten.
 
+Wir können auch direkt einen Zugang für unsere spätere Schnittstelle definieren. Hierfür wird ein Benutzer angegeben, und definiert, welche Zugriffsrechte dieser bekommt. Zusätzlich können wir IP Adressen definieren, über welche der Zugriff auf die Datenbank ermöglicht wird.
+
+################################################################
+
 ## Initialisierung eines neuen Projektes
 
 Um ein neues Projekt zu starten müssen die folgenden Schritte berücksichtigt werden.
@@ -171,11 +175,24 @@ Da die genaue Verbindung von Github und Vs Code ein eigenes Kapitel darstellen w
 
 [Github Verbindung mit Vs Code](<https://code.visualstudio.com/docs/sourcecontrol/github>)
 
-Wenn alles gepasst hat, sollten wir auf der linken Seite, beim Punkt Quellencode Verwaltung eine Zahl sehen -> Diese zeigt an, wie viele Dateien mit dem Server zu synchronieren sind.
+Wenn alles gepasst hat, sollten wir auf der linken Seite, beim Punkt Quellencode Verwaltung eine Zahl sehen -> Diese zeigt an, wie viele Dateien mit dem Server zu synchronieren sind. Den menüpunkt anklicken, eine Nachricht verfassen, um für später das Update zuordnen zu können, und dann auf Commit klicken. Damit wurde das Paket mit Github Synchorniert.
 
 ![Github Plugin für das Synchonisieren](/Images/Quellcode_0.jpg)
 
-Jetzt können wir damit beginnen, den Source Code zu bearbeiten. Hierzu müssen wir uns erstmal die Struktur etwas genauer anschauen.
+nachdem Sync mit Github müssen wir das Projekt noch auf Vercel veröffentlichen. Sofern wir bei der Acount registrierung alles richtig gemacht haben, können wir das Github Projekt sehr leicht anlegen.
+Im Dashboard von Vercel klicken wir hierzu auf **Add New -> Project** im rechten Bereich der Bildschirms.
+
+![Vercel projekt anlegen](/Images/vercel_01.jpg)
+
+Auf dem nächsten Bildschirm erscheint eine Liste unserer Github Repositories, mit jeweils kleinen Symbolen, sofern der passende Typ gefunden wurde. Hier erscheint jetzt unser neues Projekt, mit einem kleinen (N) logo als Symbol für ein Next.JS System. Einfach auf Import neben dem Namen klicken, um das deployment zu starten.
+
+![Vercel projekt anlegen](/Images/vercel_02.jpg)
+
+Am folgeBildschirm können wir einige notwendige Details einstellen, und auch Environnement Variablen anlegen. Diese benötigen wir später auch für die Datenbank Anbindung.
+
+![Vercel projekt anlegen](/Images/vercel_03.jpg)
+
+Bevor wir weitermachen, sollten wir einen kurzen Blick auf die wichtigsten Komponenten des Projektes werfen.
 
 - **/src/pages/index.js** --> Das ist unsere Startseite, die im Browser geöffnet wird, wenn wir die URL aufrufen.
 - **/src/styles/global.css** --> Hier werden alle Designangaben getätigt, die sich Global auswirken sollen
