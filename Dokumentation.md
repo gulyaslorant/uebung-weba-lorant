@@ -104,9 +104,25 @@ Als letztes benötigen wir noch einen Account bei MongoDB, das ist eine Dokument
 
 ![MongoDB Login Seite](/Images/MongoDB_google.jpg)
 
-Durch diese Massnahmen haben wir eine ganz einfache Möglichkeit direkt die Datenbank anzulegen, mit der wir später auf der Plattform arbeiten.
+Nachdem wir uns angemeldet haben, werden wir auf das Dashboard geleitet. Von hier aus könen wir unsere Datenbanken verwalten, indem wir links im Menü auf Database klicken.
 
-Wir können auch direkt einen Zugang für unsere spätere Schnittstelle definieren. Hierfür wird ein Benutzer angegeben, und definiert, welche Zugriffsrechte dieser bekommt. Zusätzlich können wir IP Adressen definieren, über welche der Zugriff auf die Datenbank ermöglicht wird.
+![MongoDB Login Seite](/Images/MongoDB_DB.jpg)
+
+Auf der neu geladenen Seite haben wir die Möglichkeit eine neue Datenbank zu erstellen. Dazu einfach im rechten Bereich auf Create klicken. Hier haben wir die Möglichkeit für unsere Testzwecke eine Kostenlose Datenbank anzulegen. Hierzu einfach die Shared Methode wählen. Zusätzlich zur Shared Option können wir auch eine Serverless oder Dedicated Variante erstellen. Diese sind aber Kostenpflichtig, und für unsere Testzwecke nicht von nöten, daher werden sie in dieser Anleitung auch nicht näher erleutert. Beim erstellen der Instanz lohnt es sich darauf zu achten, dass wir einen Server auswählen, der möglichst nah an der Geograpsischen Ort der Webseite gelegen ist. Zusätzlich gibt es die Möglichkeit zwischen den 3 großen Anbietern einen auszuwählen. Für unser Projekt haben wir keine fixe Vorgabe. Später kann es aber aufgrund von zB. Dsgvo zu Einschränkungen in der Auswahl kommen.
+
+![MongoDB Create button](/Images/MongoDB_Create.jpg)
+
+![MongoDB Create button](/Images/Mongo_Create_DB.jpg)
+
+Wenn unsere Datenbank erstellt wurde, erscheint sie in der Auflistung auf der vorherigen Seite unter dem Punkt "Database Deployements"
+
+Als nächstes müssen wir den Netzwerkzugang sicherstellen. Das ist die Möglichkeit den Zugriff einzugrenzen, zB auf bestimmte Geräte, von denen man auf die Datenbank zugreifen kann. Hierzu gehen wir im linken Menü auf "Network Access" **(1)** und klicken im rechten Bereich auf "Add IP Address" **(2)**. Hier geben wir die IP 0.0.0.0/0 an, damit der Zugriff von jeder IP Adresse möglich ist. Wenn wir später einen eigenen Server betreiben, benötigt die Datenbank nur Zugriff vom Webserver. Mit diesem Menü haben wir eine sehr gute Möglichkeit die Sicherheit unserer Installation zu erhöhen, indem wir den zugriff auf einen bestimmten Server begrenzen.
+
+![MongoDB Network Access](/Images/mongo_ip.jpg)
+
+Nachdem wir den Netzwerk Zugriff überprüft und angepasst haben, müssen wir einen Benutzer erstellen, mit dem wir später über die API auf die Datenbank zugreifen werden. Hierbei ist es wichtig, dass es verschiedene Ebenen des Zugriffs gibt. Allgemein kann man sagen, dass schreibrechte nur für Benutzer benötigt werden, die auch aktiv Inhalt verändern und ergänzen werden. Sofern der Zugriff rein zur Abfrage dient, reicht der Lesezugriff.
+
+
 
 ################################################################
 
