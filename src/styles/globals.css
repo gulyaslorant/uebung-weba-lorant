@@ -1,10 +1,12 @@
+html {
+  background-color: rgb(251, 228, 198);
+}
 main {
   max-width: 1000px;
   margin:0 auto;
   display:flexbox;
-  background-color:hsl(39, 21%, 82%);
+  background-color:hsl(39, 49%, 66%);
   justify-items: center;
-  align-items: center;
 }
 form {
   display: flexbox;

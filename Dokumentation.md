@@ -122,8 +122,6 @@ Als nächstes müssen wir den Netzwerkzugang sicherstellen. Das ist die Möglich
 
 Nachdem wir den Netzwerk Zugriff überprüft und angepasst haben, müssen wir einen Benutzer erstellen, mit dem wir später über die API auf die Datenbank zugreifen werden. Hierbei ist es wichtig, dass es verschiedene Ebenen des Zugriffs gibt. Allgemein kann man sagen, dass schreibrechte nur für Benutzer benötigt werden, die auch aktiv Inhalt verändern und ergänzen werden. Sofern der Zugriff rein zur Abfrage dient, reicht der Lesezugriff.
 
-
-
 ################################################################
 
 ## Initialisierung eines neuen Projektes
