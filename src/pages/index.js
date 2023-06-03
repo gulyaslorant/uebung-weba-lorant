@@ -3,6 +3,9 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import AnimatedText from "@/components/AnimatedText";
+import Bild from "../../public/Bild01.jpg";
+import Image from "next/image";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -39,9 +42,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        <h1>
-          Das ist eine kleine To Do Liste, auf der man einträge posten kann
-        </h1>
+        <AnimatedText text="Das ist eine kleine To Do Liste, auf der man einträge posten kann" />
+        <Image src={Bild} alt="Moderne Todo" />
         <form onSubmit={handleSubmit}>
           <input
             type="text"

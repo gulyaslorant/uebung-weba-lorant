@@ -2,7 +2,7 @@ main {
   max-width: 1000px;
   margin:0 auto;
   display:flexbox;
-  background-color:burlywood;
+  background-color:hsl(39, 21%, 82%);
   justify-items: center;
   align-items: center;
 }
@@ -18,4 +18,17 @@ input, button {
 li {
   padding: 10px 10px;
   font-weight: 800;
+  color:rgb(54, 35, 6);
+}
+
+h1 {
+  color:rgb(46, 32, 5);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+Image {
+  width: auto;
+  height: auto;
+  max-width: 500;
 }
