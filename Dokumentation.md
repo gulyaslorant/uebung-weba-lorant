@@ -122,6 +122,28 @@ Als nächstes müssen wir den Netzwerkzugang sicherstellen. Das ist die Möglich
 
 Nachdem wir den Netzwerk Zugriff überprüft und angepasst haben, müssen wir einen Benutzer erstellen, mit dem wir später über die API auf die Datenbank zugreifen werden. Hierbei ist es wichtig, dass es verschiedene Ebenen des Zugriffs gibt. Allgemein kann man sagen, dass schreibrechte nur für Benutzer benötigt werden, die auch aktiv Inhalt verändern und ergänzen werden. Sofern der Zugriff rein zur Abfrage dient, reicht der Lesezugriff.
 
+Die Einstellung der Zugriffsrechte erfolgt über den menüpunkt "Database Access" (1), wo wir eine Liste aller schon angelegter Benutzer sehen. Hier können wir dann rechts auf "add new Database User" (2) klicken, um einen neuen Zugang zu erstellen. Als Methode wählen wir "Password" asu (3) und tragen danach Benutzernamen und Passwort für den Benutzer ein. Zum Abschluss müssen wir noch die Rechte definieren. (4) Hierzu ist es am einfachsten eine Vorlage auf dem sich eröffnenden Menü zu wählen. Für unsere Aufgabe benötigen wir "read and write to any database" als Zugriffsrecht.
+
+![MongoDB Database Access](/Images/Mongo_User.jpg)
+
+Wenn wir alles eingestellt haben, können wir am ende der Seite auf "Add User klicken".
+
+Jetzt haben wir die Möglichkeit links im Menü weiter oben auf "Database" zu klicken und in der Liste unserer Datenbanken auf "Connect" zu klicken, um den Verbindungsstring zu erhalten.
+
+![MongoDB Connect](/Images/Connect.jpg)
+
+Im neu erscheinenden Menü wählen wir als erstes die Verbindungsmöglichkeit, die wir nutzen möchten. Hier klicken wir auf "Drivers", um eine direkte API (application programming interface) Verbindung aufbauen zu können. Im nächsten Fenster müssen wir dann Node.JS als Framework wählen, und die letzte Version anwählen. Weiter unten im Bild erscheint dann unser Link, wo wir nur noch den bei Network Access eingestellten Benutzernamen und das Passwort an der markierten Stelle einsetzen müssen. In der URL sehen wir auch den Namen unserer Datenbank. Dieser befinden sich direkt nach dem @ in der Zeile. Im beigefügten Screenshot wäre das "photogulasch". Der Aufbau hierbei ist immer gleich: benutzer:password@Datenbank. Wichtig ist hierbei das / Zeichen, da es das Dokument innerhalb der Datenbank zeigt. In unserem Fall ist es Weba
+
+Die Vollständige Verbdinguns URI würde lauten:
+
+`mongodb+srv://vercel-admin-user:<password>@photogulasch.j841hex.mongodb.net/Weba?retryWrites=true&w=majority`
+
+Hier einfach "vercel-admin-user", "passwort", und Dokument Name tauschen und durch eigene Werte ersetzen.
+
+![MongoDB Connect Step 2](/Images/Connect_01.jpg)
+
+![MongoDB Connect Step 2](/Images/Connect_02.jpg)
+
 ################################################################
 
 ## Initialisierung eines neuen Projektes
