@@ -6,9 +6,9 @@
 
 ## Vorwort
 
-Diese Dokumentation hat zum Ziel die Installation einer kleinen Todo Liste als Webseite zu begleiten, Hierbei werden alle wichtigen Schritte beschrieben, um an ende eine funktionierende Anwendug mit Datenbank Anbindung zu haben. Diese Dokumentation wurde auf einem MacOS Betriebssystem erstellt. Die Befehle können auf einer Linux system leicht abweichen. Die Logik der Befehle ändert sich jedoch nicht.
+Diese Dokumentation hat zum Ziel die Installation einer kleinen To-do-Liste als Webseite zu begleiten, hierbei werden alle wichtigen Schritte beschrieben, um an Ende eine funktionierende Anwendung mit Datenbank-Anbindung zu haben. Diese Dokumentation wurde auf einem macOS Betriebssystem erstellt. Die Befehle können auf einer Linux System leicht abweichen. Die Logik der Befehle ändert sich jedoch nicht.
 
-Die Finale Seite Seite kann man unter folgenden URL sehen:
+Die Finale Seite kann man unter folgenden URL sehen:
 
 [Todo Liste für Web Architekturen](<https://uebung-weba-lorant.vercel.app/>)
 
@@ -22,9 +22,9 @@ Den dazugehörigen Source Code findet man auf Github:
 
 ### Betriebssystem
 
-Es wird eine Linux oder Mac OS X Umgebung benötigt. Sofern man auf einem Mac oder Linux arbeitet sind alle notwendigen Tools nativ verfügbar.
+Es wird eine Linux oder Mac OS X Umgebung benötigt. Sofern man auf einem Mac oder Linux arbeitet, sind alle notwendigen Tools nativ verfügbar.
 
-Sofern Windows verwendet wird, muss entweder eine Virtuelle Maschine mit einer Linux Instanz installiert werden, oder ein WSL System in der Shell angelegt werden. Unter folgenden Links findet man eine Anleitung zum installieren einer Virtuellen Maschine sowie WSL Subsystem.
+Sofern Windows verwendet wird, muss entweder eine virtuelle Maschine mit einer Linux Instanz installiert werden, oder ein WSL System in der Shell angelegt werden. Unter folgenden Links findet man eine Anleitung zum Installieren einer virtuellen Maschine sowie WSL Subsystem.
 
 [Ubuntu als Virtuelle Maschine installieren](<https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview>)
 
@@ -34,14 +34,14 @@ Sofern Windows verwendet wird, muss entweder eine Virtuelle Maschine mit einer L
 
 *eine Instanz des Node Framework muss am System installiert sein.*
   
-  Um zu prüfen, ob wir Node installiert haben, können wir den folgenden Befehle absetzen.
+  Um zu prüfen, ob wir Node installiert haben, können wir den folgenden Befehl absetzen.
 
 `node --version`
 
 Sofern Node bereits installiert ist, erhalten sie eine Information übe die Version. Diese sollte mindestens mit einer 18 beginnen.
 Sollte Node nicht installiert sein, wird eine Fehlermeldung erscheinen, dass der Befehl nicht erkannt wurde.
 
-in diesem Fall muss Node erst installiert werden. Das kann man etwas über Homebrew bei MacOS machen.
+In diesem Fall muss Node erst installiert werden. Das kann man etwas über Homebrew bei macOS machen.
 
 `brew install node`
 
@@ -61,7 +61,7 @@ Der Code Editor ist unabdingbar, um den Source Code der Seite zu schreiben. Das 
 
 [Vs Code Editor](<https://code.visualstudio.com/>)
 
-Einfach installieren, und danach starten. Im IDE der Sotware hat man die Möglichkeit Plugins zu installieren, sowie Accounts zu verknüpfen. Wir werden diese Funktion nutzen, um VsCode mit Github zu verbinden, um das Updaten der App zu erleichtern. Links unten im Editor Fenster kann man ein Avatar sehen, übe den man sich auf Github anmelden kann, sofern das entsprechende Plugin installiert wurde.
+Einfach installieren, und danach starten. Im IDE der Software hat man die Möglichkeit Plugins zu installieren, sowie Accounts zu verknüpfen. Wir werden diese Funktion nutzen, um VsCode mit Github zu verbinden, um das Updaten der App zu erleichtern. Links unten im Editor Fenster kann man ein Avatar sehen, übe den man sich auf Github anmelden kann, sofern das entsprechende Plugin installiert wurde.
 
 Verwendete Plugins:
 
@@ -77,20 +77,20 @@ Verwendete Plugins:
 
 **Github:**
 
-Dieser Acount wird die Schaltzentrale für unsere Versionsverwaltung. Wir werden unsere App auf Github laden, von wo es sich mit unseren Web Server synchronisiert wird. Hierdurch ist es möglich Änderungen direkt von unseren Editor bis auf die Webseite per Konpfdruck einzuspielen.
+Dieser Account wird die Schaltzentrale für unsere Versionsverwaltung. Wir werden unsere App auf Github laden, von wo es sich mit unseren Webserver synchronisiert wird. Hierdurch ist es möglich, Änderungen direkt von unserem Editor bis auf die Webseite per Knopfdruck einzuspielen.
 
 Um uns mit Vscode verbinden zu können, müssen wir uns zuerst registrieren.
 
 [Github Login Seite](<https://github.com/>)
 
-Hier einfach rechts oben auf Sign Up klicken und ein neues Konto anlegen. Eine Empfehlung ist es ein schon bestehenden Account zu verwenden. Hierzu bietet sich z.B. ein Google Account.
+Hier einfach rechts oben auf Sign Up klicken und ein neues Konto anlegen. Eine Empfehlung ist es, ein schon bestehenden Account zu verwenden. Hierzu bietet sich z.B. ein Google Account.
 
 ![Github Login Seite](/Images/Github_01.jpg)
 
 **Vercel:**
 
 Zusätzlich zu Github benötigen wir auch einen Account auf Vercel.
-Das gute ist, dass man hier direkt seinen Github Zugang verwenden kann. Einfach beim registrieren Github wählen, und die Verbindung bestätigen.
+Das gute ist, dass man hier direkt seinen Github Zugang verwenden kann. Einfach beim Registrieren Github wählen, und die Verbindung bestätigen.
 
 ![Vercel Registrierungs Seite](/Images/Vercel_login.jpg)
 
@@ -98,7 +98,7 @@ Sobald diese beiden Accounts angelegt wurden, kann auch schon mit der Erstellung
 
 **MongoDB:**
 
-Als letztes benötigen wir noch einen Account bei MongoDB, das ist eine Dokumentenbasierte Datenbank, auf der wir uns eigene Strukturen ganz leicht anlegen können, damit wir diese später über die Webseite abrufen können. Hier haben wir auch die Möglichkeit, und einen kostenlosen Account anzulegen. Auch hier haben wir die Möglichkeit uns mit unseren Google Account anzumelden.
+Als Letztes benötigen wir noch einen Account bei MongoDB, das ist eine dokumentenbasierte Datenbank, auf der wir uns eigene Strukturen ganz leicht anlegen können, damit wir diese später über die Webseite abrufen können. Hier haben wir auch die Möglichkeit, und einen kostenlosen Account anzulegen. Auch hier haben wir die Möglichkeit uns mit unseren Google Account anzumelden.
 
 ![MongoDB Startseite](/Images/MongoDB-signin.jpg)
 
@@ -108,21 +108,21 @@ Nachdem wir uns angemeldet haben, werden wir auf das Dashboard geleitet. Von hie
 
 ![MongoDB Login Seite](/Images/MongoDB_DB.jpg)
 
-Auf der neu geladenen Seite haben wir die Möglichkeit eine neue Datenbank zu erstellen. Dazu einfach im rechten Bereich auf Create klicken. Hier haben wir die Möglichkeit für unsere Testzwecke eine Kostenlose Datenbank anzulegen. Hierzu einfach die Shared Methode wählen. Zusätzlich zur Shared Option können wir auch eine Serverless oder Dedicated Variante erstellen. Diese sind aber Kostenpflichtig, und für unsere Testzwecke nicht von nöten, daher werden sie in dieser Anleitung auch nicht näher erleutert. Beim erstellen der Instanz lohnt es sich darauf zu achten, dass wir einen Server auswählen, der möglichst nah an der Geograpsischen Ort der Webseite gelegen ist. Zusätzlich gibt es die Möglichkeit zwischen den 3 großen Anbietern einen auszuwählen. Für unser Projekt haben wir keine fixe Vorgabe. Später kann es aber aufgrund von zB. Dsgvo zu Einschränkungen in der Auswahl kommen.
+Auf der neu geladenen Seite haben wir die Möglichkeit, eine neue Datenbank zu erstellen. Dazu einfach im rechten Bereich auf Create klicken. Hier haben wir die Möglichkeit für unsere Testzwecke eine kostenlose Datenbank anzulegen. Hierzu einfach die Shared Methode wählen. Zusätzlich zur Shared Option können wir auch eine Serverless oder Dedicated Variante erstellen. Diese sind aber kostenpflichtig, und für unsere Testzwecke nicht vonnöten, daher werden sie in dieser Anleitung auch nicht näher erläutert. Beim Erstellen der Instanz lohnt es sich darauf zu achten, dass wir einen Server auswählen, der möglichst nah an der geografischen Ort der Webseite gelegen ist. Zusätzlich gibt es die Möglichkeit zwischen den 3 großen Anbietern einen auszuwählen. Für unser Projekt haben wir keine fixe Vorgabe. Später kann es aber aufgrund von z. B. DSGVO zu Einschränkungen in der Auswahl kommen.
 
 ![MongoDB Create button](/Images/MongoDB_Create.jpg)
 
 ![MongoDB Create button](/Images/Mongo_Create_DB.jpg)
 
-Wenn unsere Datenbank erstellt wurde, erscheint sie in der Auflistung auf der vorherigen Seite unter dem Punkt "Database Deployements"
+Wenn unsere Datenbank erstellt wurde, erscheint sie in der Auflistung auf der vorherigen Seite unter dem Punkt „Database Deployments“
 
-Als nächstes müssen wir den Netzwerkzugang sicherstellen. Das ist die Möglichkeit den Zugriff einzugrenzen, zB auf bestimmte Geräte, von denen man auf die Datenbank zugreifen kann. Hierzu gehen wir im linken Menü auf "Network Access" **(1)** und klicken im rechten Bereich auf "Add IP Address" **(2)**. Hier geben wir die IP 0.0.0.0/0 an, damit der Zugriff von jeder IP Adresse möglich ist. Wenn wir später einen eigenen Server betreiben, benötigt die Datenbank nur Zugriff vom Webserver. Mit diesem Menü haben wir eine sehr gute Möglichkeit die Sicherheit unserer Installation zu erhöhen, indem wir den zugriff auf einen bestimmten Server begrenzen.
+Als Nächstes müssen wir den Netzwerkzugang sicherstellen. Das ist die Möglichkeit den Zugriff einzugrenzen, z. B. auf bestimmte Geräte, von denen man auf die Datenbank zugreifen kann. Hierzu gehen wir im linken Menü auf „Network Access“ **(1)** und klicken im rechten Bereich auf „Add IP Address“ **(2)**. Hier geben wir die IP 0.0.0.0/0 an, damit der Zugriff von jeder IP-Adresse möglich ist. Wenn wir später einen eigenen Server betreiben, benötigt die Datenbank nur Zugriff vom Webserver. Mit diesem Menü haben wir eine sehr gute Möglichkeit die Sicherheit unserer Installation zu erhöhen, indem wir den Zugriff auf einen bestimmten Server begrenzen.
 
 ![MongoDB Network Access](/Images/mongo_ip.jpg)
 
-Nachdem wir den Netzwerk Zugriff überprüft und angepasst haben, müssen wir einen Benutzer erstellen, mit dem wir später über die API auf die Datenbank zugreifen werden. Hierbei ist es wichtig, dass es verschiedene Ebenen des Zugriffs gibt. Allgemein kann man sagen, dass schreibrechte nur für Benutzer benötigt werden, die auch aktiv Inhalt verändern und ergänzen werden. Sofern der Zugriff rein zur Abfrage dient, reicht der Lesezugriff.
+Nachdem wir den Netzwerkzugriff überprüft und angepasst haben, müssen wir einen Benutzer erstellen, mit dem wir später über die API auf die Datenbank zugreifen werden. Hierbei ist es wichtig, dass es verschiedene Ebenen des Zugriffs gibt. Allgemein kann man sagen, dass Schreibrechte nur für Benutzer benötigt werden, die auch aktiv Inhalt verändern und ergänzen werden. Sofern der Zugriff rein zur Abfrage dient, reicht der Lesezugriff.
 
-Die Einstellung der Zugriffsrechte erfolgt über den menüpunkt "Database Access" (1), wo wir eine Liste aller schon angelegter Benutzer sehen. Hier können wir dann rechts auf "add new Database User" (2) klicken, um einen neuen Zugang zu erstellen. Als Methode wählen wir "Password" asu (3) und tragen danach Benutzernamen und Passwort für den Benutzer ein. Zum Abschluss müssen wir noch die Rechte definieren. (4) Hierzu ist es am einfachsten eine Vorlage auf dem sich eröffnenden Menü zu wählen. Für unsere Aufgabe benötigen wir "read and write to any database" als Zugriffsrecht.
+Die Einstellung der Zugriffsrechte erfolgt über den Menüpunkt "Database Access" (1), wo wir eine Liste aller schon angelegter Benutzer sehen. Hier können wir dann rechts auf "add new Database User" (2) klicken, um einen neuen Zugang zu erstellen. Als Methode wählen wir "Password" aus (3) und tragen danach Benutzernamen und Passwort für den Benutzer ein. Zum Abschluss müssen wir noch die Rechte definieren. (4) Hierzu ist es am einfachsten eine Vorlage auf dem sich eröffnenden Menü zu wählen. Für unsere Aufgabe benötigen wir "read and write to any database" als Zugriffsrecht.
 
 ![MongoDB Database Access](/Images/Mongo_User.jpg)
 
@@ -132,9 +132,9 @@ Jetzt haben wir die Möglichkeit links im Menü weiter oben auf "Database" zu kl
 
 ![MongoDB Connect](/Images/Connect.jpg)
 
-Im neu erscheinenden Menü wählen wir als erstes die Verbindungsmöglichkeit, die wir nutzen möchten. Hier klicken wir auf "Drivers", um eine direkte API (application programming interface) Verbindung aufbauen zu können. Im nächsten Fenster müssen wir dann Node.JS als Framework wählen, und die letzte Version anwählen. Weiter unten im Bild erscheint dann unser Link, wo wir nur noch den bei Network Access eingestellten Benutzernamen und das Passwort an der markierten Stelle einsetzen müssen. In der URL sehen wir auch den Namen unserer Datenbank. Dieser befinden sich direkt nach dem @ in der Zeile. Im beigefügten Screenshot wäre das "photogulasch". Der Aufbau hierbei ist immer gleich: benutzer:password@Datenbank. Wichtig ist hierbei das / Zeichen, da es das Dokument innerhalb der Datenbank zeigt. In unserem Fall ist es Weba
+Im neu erscheinenden Menü wählen wir als Erstes die Verbindungsmöglichkeit, die wir nutzen möchten. Hier klicken wir auf "Drivers", um eine direkte API (application programming interface) Verbindung aufbauen zu können. Im nächsten Fenster müssen wir dann Node.JS als Framework wählen, und die letzte Version anwählen. Weiter unten im Bild erscheint dann unser Link, wo wir nur noch den bei Network Access eingestellten Benutzernamen und das Passwort an der markierten Stelle einsetzen müssen. In der URL sehen wir auch den Namen unserer Datenbank. Dieser befinden sich direkt nach dem @ in der Zeile. Im beigefügten Screenshot wäre das "photogulasch". Der Aufbau hierbei ist immer gleich: benutzer:password@Datenbank. Wichtig ist hierbei das / Zeichen, da es das Dokument innerhalb der Datenbank zeigt. In unserem Fall ist es Weba
 
-Die Vollständige Verbdinguns URI würde lauten:
+Die Vollständige Verbdinguns URI würde lauten, später werden wir als **MONGO_URI** in der *Enviroment Variable* auf diesen String referenzieren:
 
 `mongodb+srv://vercel-admin-user:<password>@photogulasch.j841hex.mongodb.net/Weba?retryWrites=true&w=majority`
 
@@ -148,13 +148,13 @@ Hier einfach "vercel-admin-user", "passwort", und Dokument Name tauschen und dur
 
 ## Initialisierung eines neuen Projektes
 
-Um ein neues Projekt zu starten müssen die folgenden Schritte berücksichtigt werden.
+Um ein neues Projekt zu starten, müssen die folgenden Schritte berücksichtigt werden.
 
-Starten wir die Virtuelle Maschine oder öffnen das WSL Terminal.
+Starten wir die virtuelle Maschine oder öffnen das WSL Terminal.
 
 Wechseln wir in den Arbeitsordner, in dem das Projekt angelegt werden soll. Das kann z.B. der Ordner sein, in dem alle Github Projekte abliegen.
 
-hier verwenden wir den folgenden Befehl:
+Hier verwenden wir den folgenden Befehl:
 
 `cd "xx"/Github/`
 
@@ -164,7 +164,7 @@ Im Ordner führen wir den folgenden Befehl aus.
 
 `npx create-next-app weba-lorant-weba`
 
-Hierbei ist **npx** der Befehl, create-next-app der Parameter und *"weba-uebung-lorant"* der Projektname. Nachdem Ausführen des Befehls werden einige Fragen zur Art des Projektes gestellt. Hierbei wird z.B. abgefragt, ob das Projekt Typescript verwenden soll, Tailwind Css verwendet wird und ähnliches. Im folgenden Bild sind die passenden Einstellungen für das aktuelle Projekt abgebildet. Hier sieht man auch die Ausgabe des befehls in der Konsole.
+Hierbei ist **npx** der Befehl, create-next-app der Parameter und *"weba-uebung-lorant"* der Projektname. Nachdem Ausführen des Befehls werden einige Fragen zur Art des Projektes gestellt. Hierbei wird z.B. abgefragt, ob das Projekt Typescript verwenden soll, Tailwind Css verwendet wird und ähnliches. Im folgenden Bild sind die passenden Einstellungen für das aktuelle Projekt abgebildet. Hier sieht man auch die Ausgabe des Befehls in der Konsole.
 
 ![Einstellungen Node Projekt](/Images/npx_01.jpg)
 
@@ -207,24 +207,24 @@ Wenn alles richtig gemacht wurde, bekommen wir in der letzten Zeile die Nachrich
 
 Bevor wir mit den Anpassungen der Seite beginnen, sollten wir zuerst die Verbindung mit Vercel anlegen, damit später die Aktualisierung der App direkt aus VsCode passieren kann.
 
-Da die genaue Verbindung von Github und Vs Code ein eigenes Kapitel darstellen würde, wird hier die Offizielle Anleitung verlinkt, wo genau beschrieben ist, welche Schritte man durchführen muss.
+Da die genaue Verbindung von Github und Vs Code ein eigenes Kapitel darstellen würde, wird hier die offizielle Anleitung verlinkt, wo genau beschrieben ist, welche Schritte man durchführen muss.
 
 [Github Verbindung mit Vs Code](<https://code.visualstudio.com/docs/sourcecontrol/github>)
 
-Wenn alles gepasst hat, sollten wir auf der linken Seite, beim Punkt Quellencode Verwaltung eine Zahl sehen -> Diese zeigt an, wie viele Dateien mit dem Server zu synchronieren sind. Den menüpunkt anklicken, eine Nachricht verfassen, um für später das Update zuordnen zu können, und dann auf Commit klicken. Damit wurde das Paket mit Github Synchorniert.
+Wenn alles gepasst hat, sollten wir auf der linken Seite, beim Punkt Quellencode Verwaltung eine Zahl sehen -> Diese zeigt an, wie viele Dateien mit dem Server zu synchronisieren sind. Den Menüpunkt anklicken, eine Nachricht verfassen, um für später das Update zuordnen zu können, und dann auf Commit klicken. Damit wurde das Paket mit Github synchronisiert.
 
 ![Github Plugin für das Synchonisieren](/Images/Quellcode_0.jpg)
 
-nachdem Sync mit Github müssen wir das Projekt noch auf Vercel veröffentlichen. Sofern wir bei der Acount registrierung alles richtig gemacht haben, können wir das Github Projekt sehr leicht anlegen.
-Im Dashboard von Vercel klicken wir hierzu auf **Add New -> Project** im rechten Bereich der Bildschirms.
+Nachdem Sync mit Github, müssen wir das Projekt noch auf Vercel veröffentlichen. Sofern wir bei der Accountregistrierung alles richtig gemacht haben, können wir das Github Projekt sehr leicht anlegen.
+Im Dashboard von Vercel klicken wir hierzu auf **Add New -> Project** im rechten Bereich des Bildschirmes.
 
 ![Vercel projekt anlegen](/Images/vercel_01.jpg)
 
-Auf dem nächsten Bildschirm erscheint eine Liste unserer Github Repositories, mit jeweils kleinen Symbolen, sofern der passende Typ gefunden wurde. Hier erscheint jetzt unser neues Projekt, mit einem kleinen (N) logo als Symbol für ein Next.JS System. Einfach auf Import neben dem Namen klicken, um das deployment zu starten.
+Auf dem nächsten Bildschirm erscheint eine Liste unserer Github Repository, mit jeweils kleinen Symbolen, sofern der passende Typ gefunden wurde. Hier erscheint jetzt unser neues Projekt, mit einem kleinen (N) Logo als Symbol für ein Next.JS System. Einfach auf Import neben dem Namen klicken, um das Deployment zu starten.
 
 ![Vercel projekt anlegen](/Images/vercel_02.jpg)
 
-Am folgeBildschirm können wir einige notwendige Details einstellen, und auch Environnement Variablen anlegen. Diese benötigen wir später auch für die Datenbank Anbindung.
+Am folgeBildschirm können wir einige notwendige Details einstellen, und auch Environnement Variablen anlegen. Diese benötigen wir später auch für die Datenbank Anbindung. Hierzu einfach in den Punkt "Build and Output Settings" auf Enviroment Variables klicken. Hier können wir neue hinzufügen. Unsere Variable hat den Namen "MONGO_URI" und der Wert ist der weiter oben bei MongoDB definierte ZugriffsURL. Danach einfach auf Add klicken, um diese dem Projekt hinzuzufügen.
 
 ![Vercel projekt anlegen](/Images/vercel_03.jpg)
 
@@ -235,4 +235,4 @@ Bevor wir weitermachen, sollten wir einen kurzen Blick auf die wichtigsten Kompo
 - **package.json** --> Hier werden alle Komponenten gelistet, die in der Instanz laufen und benötigt werden.
 - **/public/**  --> Hier sind alle Dateien, die frei zugänglich sein sollen.
 
-Bevor wir die Index.js editieren werden, müssen wir erst Vorkehrungen treffen, um die Datenbank anbindung zu aktivieren. Hier gibt es bestimmte Routen, die eingehalten werden müssen, damit die Verbindung zur Datenbank auf funktionieren kann.
+Unser Ziel ist es, eine eigenständige Anwendung zu erlangen, und hierdurch auch ein besseres Verständnis für den Aufbau
