@@ -3,6 +3,7 @@
 ## Ersteller: Lorant Gulyas
 
 ################################################################
+
 - [Semesterarbeit Webarchitekturen: Thema -\> Next.JS](#semesterarbeit-webarchitekturen-thema---nextjs)
   - [Ersteller: Lorant Gulyas](#ersteller-lorant-gulyas)
   - [Vorwort](#vorwort)
