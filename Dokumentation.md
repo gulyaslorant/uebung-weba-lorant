@@ -4,6 +4,23 @@
 
 ################################################################
 
+- [Semesterarbeit Webarchitekturen: Thema -\> Next.JS](#semesterarbeit-webarchitekturen-thema---nextjs)
+  - [Ersteller: Lorant Gulyas](#ersteller-lorant-gulyas)
+  - [Vorwort](#vorwort)
+  - [Technische Voraussetzungen in der Entwicklungsumgebung](#technische-voraussetzungen-in-der-entwicklungsumgebung)
+    - [Betriebssystem](#betriebssystem)
+  - [Benötigte Accounts](#benötigte-accounts)
+  - [Initialisierung eines neuen Projektes](#initialisierung-eines-neuen-projektes)
+    - [Start den Webserver](#start-den-webserver)
+  - [Wir haben es geschafft, wir haben unsere erste eigene Next.Js App angelegt](#wir-haben-es-geschafft-wir-haben-unsere-erste-eigene-nextjs-app-angelegt)
+    - [Wir können die Webseite öffnen, indem wir die Localhost Adresse in unseren Browser öffnen](#wir-können-die-webseite-öffnen-indem-wir-die-localhost-adresse-in-unseren-browser-öffnen)
+  - [Datenbank Verbindung erzeugen](#datenbank-verbindung-erzeugen)
+  - [Datenmodel erzeugen](#datenmodel-erzeugen)
+  - [API zu MongoDB für Abfrage der Daten](#api-zu-mongodb-für-abfrage-der-daten)
+  - [API Schnittstelle zum hochladen von Daten.](#api-schnittstelle-zum-hochladen-von-daten)
+  - [Die Startseite](#die-startseite)
+  - [Schlusswort](#schlusswort)
+
 ## Vorwort
 
 Diese Dokumentation hat zum Ziel die Installation einer kleinen To-do-Liste als Webseite zu begleiten, hierbei werden alle wichtigen Schritte beschrieben, um an Ende eine funktionierende Anwendung mit Datenbank-Anbindung zu haben. Diese Dokumentation wurde auf einem macOS Betriebssystem erstellt. Die Befehle können auf einer Linux System leicht abweichen. Die Logik der Befehle ändert sich jedoch nicht.
@@ -515,4 +532,143 @@ Besonders wichtig hierbei ist, dass wir im li element eine key="t._id" angeben. 
 
 Wenn wir alles erstellt haben, sollten wir unsere Seite schon Abbilden können, auch wenn sie noch nicht besonders schön ist.
 
-Jetzt können wir unsere
+Jetzt können wir unsere Animation erstellen.
+
+Hierzu müssen wir eine neue Datei erstellen. Zuerst erstellen wir einen Unterordner im src Ordner, den wir **components** nennen. In dem neu erstellten Ordner werden wir eine Datei anlegen. Diese nennen wir **AnimatedText.js**
+
+Folgender Code können wir direkt in die Datei kopieren.
+
+*src/components/AnimatedText.js* 1:
+```javascript
+/** @format */
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const quote = {
+  initial: {
+    opacity: 1,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const singleWord = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const AnimatedText = ({ text}) => {
+  return (
+    <div >
+      <motion.h1
+        variants={quote}
+        initial="initial"
+        animate="animate"
+      >
+        {text.split(" ").map((word, index) => (
+          <motion.span
+            key={word + "-" + index}
+            variants={singleWord}
+          >
+            {word}&nbsp;
+          </motion.span>
+        ))}
+      </motion.h1>
+    </div>
+  );
+};
+
+export default AnimatedText;
+
+```
+
+Für diese Animation müssen wir das framer-motion Paket installieren.
+
+`npm install framer-motion`
+
+Wenn das Paket installiert ist, können wir den Arbeitsbereich neu laden, und das Modul verwenden.
+Das besondere an dem Modul ist, dass wir hiermit die normalen Html Elemente animieren können, wenn wir motion. vor die Blöcke geben. So z. B. motion.span. Um die Effekte richtig verwenden zu können, müssen wir das verhalten der Animation anhand vo Parametern definieren. Die genauen Parameter kann man dem Code entnehmen. Wichtig ist es immer, dass wir einen Initial Wert definieren, also was der Status ist, welches das Element hat, wenn die Animation gestartet wird. Danach definieren wir, was animiert werden soll, und können auch z. B. angeben, welche Zeit die Animation beansprucht. 
+
+In unserem Beispiel animieren wir den Text an sich, und dann noch verschachtelt das versetze bewegen der einzelnen Wörter. 
+
+Wer genauere Details zu framer motion haben möchte, kann die offizielle Dokumentation zu Rate ziehen.
+
+[Framer Motion Dokumentation](<https://www.framer.com/motion/guide-accessibility/>)
+
+Wenn wir alles richtig eingestellt haben, können wir die Funktion auf unserer Index Seite direkt aufrufen, und den zu animierenden Text als Information weitergeben. Diese liefert dann den Text mit einer netten Animation.
+
+Als letztes müssen wir noch die globals.css Datei in dem Ordner /src/styles editieren, damit die Darstellung auch enstprechend aussieht.
+
+Die standardmäßig definierten Einstellungen können wir komplett löschen, da wir eigene Elemente haben, die wir anpassen müssen.
+
+
+Folgende Werte werden wir benötigen:
+
+*src/styles/globals.css* 1:
+```css
+html {
+  background-color: rgb(251, 228, 198);
+}
+main {
+  max-width: 1000px;
+  margin:0 auto;
+  display:flexbox;
+  background-color:hsl(39, 49%, 66%);
+  justify-items: center;
+}
+form {
+  display: flexbox;
+  gap: 20px;
+  font-size: 20px;
+}
+input, button {
+  padding: 10px 20px;
+}
+
+li {
+  padding: 10px 10px;
+  font-weight: 800;
+  color:rgb(54, 35, 6);
+}
+
+h1 {
+  color:rgb(46, 32, 5);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+Image {
+  width: auto;
+  height: auto;
+  max-width: 500;
+}
+```
+
+Hier definieren wir das aussehen für die *main* , die *form* , *input, button* , *li*, *h1* , und *Image* Komponenten. Alle hier eingestellten Änderungen werden direkt auf alle Seiten übernommen.
+
+Wenn alles geklappt hat, sollte eine Seite wie folgt aussehen.
+
+![Fertige Seite](/Users/lorant/GitHub/uebung-weba-lorant/Images/Final.jpg)
+
+Sofern wir alle Verbindungen richtig erstellt haben, können wir die Daten einfach mit Github über Quellenverwaltung Synchronisieren. Sobald die aktuelle Version bei Github aufliegt, wird es auch automatisch an Vercel gepusht. Vercel erstellt dann automatisiert ein neues Build, welches dann dem Endnutzer bereitsgestellt wird.
+
+## Schlusswort
+
+Der besondere Vorteil dieses Frameworks ist die Dynamische Abbildung am Server. Der Endnutzer braucht sehr wenig Vorraussetzungen am Browser selber. Die Komponenten werden beim generieren der Anwendung am Server hinterlegt. Da vorwiegend Javascript verwendet wird, kann sehr leicht eine Interaktive Seite aufgebaut werden, welche die Besucher zum mitmachen animieren kann. Das kann man auf vielen Anwendungsgebieten gut verwenden. Besonders im UI/UX Bereich wird es immer häufiger verwendet. Zusätzlich sind viele große Plattformen, wie **Twitch, Tiktok** oder auch **Netflix** auf Basis von Node aufgesetzt.
+
+Eventuelle Fehler bitte im Issues Abschnitt auf der Github Repo hinterlassen.
