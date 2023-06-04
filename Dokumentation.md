@@ -18,7 +18,7 @@ Den dazugehörigen Source Code findet man auf Github:
 
 ################################################################
 
-## Technische Vorraussetzungen in der Entwicklungsumgebung
+## Technische Voraussetzungen in der Entwicklungsumgebung
 
 ### Betriebssystem
 
@@ -92,7 +92,7 @@ Hier einfach rechts oben auf Sign Up klicken und ein neues Konto anlegen. Eine E
 Zusätzlich zu Github benötigen wir auch einen Account auf Vercel.
 Das gute ist, dass man hier direkt seinen Github Zugang verwenden kann. Einfach beim Registrieren Github wählen, und die Verbindung bestätigen.
 
-![Vercel Registrierungs Seite](/Images/Vercel_login.jpg)
+![Vercel Registrierung Seite](/Images/Vercel_login.jpg)
 
 Sobald diese beiden Accounts angelegt wurden, kann auch schon mit der Erstellung der Webseite begonnen werden.
 
@@ -104,7 +104,7 @@ Als Letztes benötigen wir noch einen Account bei MongoDB, das ist eine dokument
 
 ![MongoDB Login Seite](/Images/MongoDB_google.jpg)
 
-Nachdem wir uns angemeldet haben, werden wir auf das Dashboard geleitet. Von hier aus könen wir unsere Datenbanken verwalten, indem wir links im Menü auf Database klicken.
+Nachdem wir uns angemeldet haben, werden wir auf das Dashboard geleitet. Von hier aus können wir unsere Datenbanken verwalten, indem wir links im Menü auf Database klicken.
 
 ![MongoDB Login Seite](/Images/MongoDB_DB.jpg)
 
@@ -128,13 +128,13 @@ Die Einstellung der Zugriffsrechte erfolgt über den Menüpunkt "Database Access
 
 Wenn wir alles eingestellt haben, können wir am ende der Seite auf "Add User klicken".
 
-Jetzt haben wir die Möglichkeit links im Menü weiter oben auf "Database" zu klicken und in der Liste unserer Datenbanken auf "Connect" zu klicken, um den Verbindungsstring zu erhalten.
+Jetzt haben wir die Möglichkeit links im Menü weiter oben auf "Database" zu klicken und in der Liste unserer Datenbanken auf "Connect" zu klicken, um den Verbindungsstrang zu erhalten.
 
 ![MongoDB Connect](/Images/Connect.jpg)
 
-Im neu erscheinenden Menü wählen wir als Erstes die Verbindungsmöglichkeit, die wir nutzen möchten. Hier klicken wir auf "Drivers", um eine direkte API (application programming interface) Verbindung aufbauen zu können. Im nächsten Fenster müssen wir dann Node.JS als Framework wählen, und die letzte Version anwählen. Weiter unten im Bild erscheint dann unser Link, wo wir nur noch den bei Network Access eingestellten Benutzernamen und das Passwort an der markierten Stelle einsetzen müssen. In der URL sehen wir auch den Namen unserer Datenbank. Dieser befinden sich direkt nach dem @ in der Zeile. Im beigefügten Screenshot wäre das "photogulasch". Der Aufbau hierbei ist immer gleich: benutzer:password@Datenbank. Wichtig ist hierbei das / Zeichen, da es das Dokument innerhalb der Datenbank zeigt. In unserem Fall ist es Weba
+Im neu erscheinenden Menü wählen wir als Erstes die Verbindungsmöglichkeit, die wir nutzen möchten. Hier klicken wir auf "Drivers", um eine direkte API (application programming interface) Verbindung aufbauen zu können. Im nächsten Fenster müssen wir dann Node.JS als Framework wählen, und die letzte Version anwählen. Weiter unten im Bild erscheint dann unser Link, wo wir nur noch den bei Network Access eingestellten Benutzernamen und das Passwort an der markierten Stelle einsetzen müssen. In der URL sehen wir auch den Namen unserer Datenbank. Dieser befinden sich direkt nach dem @ in der Zeile. Im beigefügten Screenshot wäre das "photogulasch". Der Aufbau hierbei ist immer gleich: Benutzer:password@Datenbank. Wichtig ist hierbei das / Zeichen, da es das Dokument innerhalb der Datenbank zeigt. In unserem Fall ist es Weba
 
-Die Vollständige Verbdinguns URI würde lauten, später werden wir als **MONGO_URI** in der *Enviroment Variable* auf diesen String referenzieren:
+Die Vollständige Verbindung URI würde lauten, später werden wir als **MONGO_URI** in der *Enviroment Variable* auf diesen String referenzieren:
 
 `mongodb+srv://vercel-admin-user:<password>@photogulasch.j841hex.mongodb.net/Weba?retryWrites=true&w=majority`
 
@@ -168,7 +168,7 @@ Hierbei ist **npx** der Befehl, create-next-app der Parameter und *"weba-uebung-
 
 ![Einstellungen Node Projekt](/Images/npx_01.jpg)
 
-Nachdem das Projekt erstellt wurde, kann auch schon das passende Git Repository erstellt werden. *(Wir haben die erweiterte Version von Git verwendet. (Die erweiterung Git Flow ist hierbei aber Opional. Sie dient dazu verschiedene Stränge für die Entwicklung bereitzustellen.))*
+Nachdem das Projekt erstellt wurde, kann auch schon das passende Git Repository erstellt werden. *(Wir haben die erweiterte Version von Git verwendet. (Die Erweiterung Git Flow ist hierbei aber Optional. Sie dient dazu verschiedene Stränge für die Entwicklung bereitzustellen.))*
 
 Zuerst mit `cd "Projektname"` in das entsprechende Verzeichnis wechseln und den folgenden Befehl ausführen.
 
@@ -180,7 +180,7 @@ Anbei die Ausgabe des Befehls, mit den möglichen Parametern, die man angeben ka
 
 Wenn alles erfolgreich geklappt hat, dann sollten folgende Dateien zu sehen sein, wenn man den neu angelegten Ordner mit Visual Studio Code öffnet.
 
-![Ordenerstruktur in Vs Code](/Images/vscode_01.jpg)
+![Ordnerstruktur in Vs Code](/Images/vscode_01.jpg)
 
 Wenn wir dieses Bild sehen, können wir die Applikation zum ersten mal starten.
 
@@ -213,7 +213,7 @@ Da die genaue Verbindung von Github und Vs Code ein eigenes Kapitel darstellen w
 
 Wenn alles gepasst hat, sollten wir auf der linken Seite, beim Punkt Quellencode Verwaltung eine Zahl sehen -> Diese zeigt an, wie viele Dateien mit dem Server zu synchronisieren sind. Den Menüpunkt anklicken, eine Nachricht verfassen, um für später das Update zuordnen zu können, und dann auf Commit klicken. Damit wurde das Paket mit Github synchronisiert.
 
-![Github Plugin für das Synchonisieren](/Images/Quellcode_0.jpg)
+![Github Plugin für das Synchronisieren](/Images/Quellcode_0.jpg)
 
 Nachdem Sync mit Github, müssen wir das Projekt noch auf Vercel veröffentlichen. Sofern wir bei der Accountregistrierung alles richtig gemacht haben, können wir das Github Projekt sehr leicht anlegen.
 Im Dashboard von Vercel klicken wir hierzu auf **Add New -> Project** im rechten Bereich des Bildschirmes.
@@ -235,4 +235,121 @@ Bevor wir weitermachen, sollten wir einen kurzen Blick auf die wichtigsten Kompo
 - **package.json** --> Hier werden alle Komponenten gelistet, die in der Instanz laufen und benötigt werden.
 - **/public/**  --> Hier sind alle Dateien, die frei zugänglich sein sollen.
 
-Unser Ziel ist es, eine eigenständige Anwendung zu erlangen, und hierdurch auch ein besseres Verständnis für den Aufbau
+Unser Ziel ist es, eine eigenständige Anwendung zu erlangen, und hierdurch auch ein besseres Verständnis für den Aufbau einer Next.JS Seite zu bekommen.
+
+Unser Ziel ist es eine einfach Todo Liste zu erstellen, also eine Liste, auf der für über ein Eingabefeld neue Elemente eintragen können, und diese dann direkt auf der Webseite angezeigt werden. Die angelegten Daten, die wir später auch anzeigen möchten, werden hierfür auf MongoDB gespeichert, und von hier abgerufen.
+
+## Datenbank Verbindung erzeugen
+
+Wir starten den Aufbau unserer Seite mit dem erstellen der Verbindung zu MongoDB.
+
+Hierzu erstellen wir zuerst einen Ordner **libs** im src Ordner unseres Projektes. In diesem Ordner erstellen wir eine Datei, die wir MongoConnect.js nennen. Diese Datei wird beim aufrufen der Seite die Verbindung zum Server herstellen und halten.
+
+Folgender Code muss in die Datei eingefügt werden.
+
+```ts
+/** @format */
+
+import mongoose from "mongoose";
+
+export const connectMongoDB = async () => {
+  if (mongoose.connection.readyState === 1) {
+    return mongoose.connection.asPromise();
+  }
+  return await mongoose.connect(process.env.MONGO_URI);
+};
+```
+
+Wenn wir den Code 1:1 in die Datei kopieren, werden wir eine Fehlermeldung bekommen, dass mongoose nicht gefunden werden konnte. Mongoose ist ein Paket, welches wir verwenden, um eine Verbindung zum Mongo Server zu ermöglichen.
+
+Um Mongoose zu installieren müssen wir im Terminal den folgenden Befehl im Projektordner absetzen.
+
+`npm install mongoose`
+
+Wenn die Installation abgeschlossen ist, können wir unseren Arbeitsbereich aktualisieren, um direkt mongoose verwenden zu können.
+
+Hierzu einfach **Shift+Strg+P** oder **Command+Shit+P** drücken, oder auch alternativ im Menü Anzeigen->Befehlspalette anwählen und
+
+`reload`
+
+tippen. Hiermit haben wir den Arbeitsbereich neu geladen, und die Module werden auch erkannt.
+
+In unserer Datei erstellen wir eine Variable, die als Wert den Status der Verbindung haben wird. Das ganze wird über eine Asynchrone Funktion abgerufen.
+Hierbei überwachen wir die Verbindung. Wenn diese als Status ===1 hat, also wahr ist, dann wird sie weitergeben, ansonsten *mongoose.connect* mit der Umgebungsvariable **MONGO_URI** Wir erinnern uns, beim erstellen der Mongo Datenbank haben wir den Verbindungstext erzeugt. Diesen werden hier hier jetzt verwenden.
+
+Wir erstellen eine Datei im Hauptverzeichnis des Projektes. Diese benennen wir **.env.local**
+
+Diese Datei wird nur eine einzige Zeile enthalten.
+
+MONGO_URI="mongodb+srv://..." (Hier bitte den Vollständigen String eintragen)
+
+Wir können jetzt die Datei speichern und schliessen.
+
+## Datenmodel erzeugen
+
+Bei MongoDB werden Datenmodelle definiert, mit deren Hilfe wir strukturiert Daten in unserer Datenbank ablegen können. Das ist quasi die Grundlage der späteren Operationen zum auslesen und hochladen der Daten.
+
+Hierzu erstellen wir in unseren *src* Ordner einen *models* Unterordner. Hier erstellen wir dann eine Datei mit dem Namen **taskModel.js**
+
+Folgenden Code kopieren wir in die Datei
+
+```ts
+/** @format */
+
+import mongoose from "mongoose";
+
+const taskSchema = new mongoose.Schema({
+  task: {
+    type: String,
+    required: true,
+  },
+});
+
+const Task = mongoose.models.Task || mongoose.model("Task", taskSchema);
+
+export default Task;
+
+```
+
+In dieser Datei verwenden wir wieder Mongoose als Verbindungsmodul.
+
+Erstellen ein Variable mit dem Namen taskSchema, das beinhaltet ein mongoose.Schema, mit dem Wert *task*, welches vom Typ ein String ist, und verpflichtend angegeben werden muss.
+
+Aus dem Schema erstellen wir dann eine Variable *Task* welches unser Model sein wird. Als erstes definieren wir, dass *Task* ein Model ist, um danach anzugeben, dass das Task model aus dem taskSchema besteht.
+
+Zum Schluss exportieren wir das Model aus Rückgabewert.
+
+Nachdem wir auch unser Model definiert haben, können wir unsere API Routen erstellen.
+
+## API zu MongoDB
+
+Unsere API enthält 2 Routen, die wir anlegen müssen. Sowohl die Abfrage als auch Eintrag muss natürlich dargestellt werden.
+
+Fangen wir als erstes mit der Abfrage an. Hierzu erstellen wir in /src/pages/ einen neuen Unterordner mit dem Namen api. In diesem Ordner erstellen wir eine neue Datei mit dem Namen **get_task.js**
+
+```ts
+/** @format */
+
+import { connectMongoDB } from "@/libs/MongoConnect";
+import Task from "@/models/taskModel";
+
+export default async function handler(req, res) {
+  if (req.method !== "GET") {
+    res.status(405).send({ msg: "Only GET requests are allowed" });
+    return;
+  }
+  const { task } = req.body;
+
+  try {
+    await connectMongoDB();
+    const tasks = await Task.find();
+    res.status(200).send(tasks);
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ err, msg: "Something went wrong" });
+  }
+}
+
+```
+
+In dieser Datei prüfen wir die Art der Anfrage, die über das Frontend gesendet werden, um senden entsprechende Statusmeldungen weiter. In diesem Beispiel prüfen wir, ob der gesendete Status "GET" ist. Sofern es ein anderer Wert ist, sendet die API eine Rückmeldung, dass nur GET Befehl gestattet sind.
